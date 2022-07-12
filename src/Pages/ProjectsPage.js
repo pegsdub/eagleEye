@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const ProjectsPage = () => {
   return (
     <div>
-        <h1>ProjectsPage</h1>
+      <h1 className=" justify-center text-center">ProjectsPage</h1>
     </div>
-  )
-}
+  );
+};
 
 export default ProjectsPage;

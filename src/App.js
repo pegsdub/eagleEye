@@ -1,27 +1,25 @@
-import React, { useState, useEffect, Fragment } from "react";
 import NavBar from "./Components/NavBar";
 import { Routes, Route } from "react-router-dom";
 import EquipmentPage from "./Pages/EquipmentPage";
-import EagleEyeHome from "./Pages/eagleEyeHome";
 import ProjectsPage from "./Pages/ProjectsPage";
+import EagleEyeHome from "./Pages/eagleEyeHome";
+import ServicePage from "./Pages/ServicePage";
+import AdminPage from "./Pages/AdminPage";
 
-function App() {
+export default function App() {
   return (
     <>
-      <Fragment>
-        <div className="top-0 left-0 fixed">
-          <div>
-            <NavBar />
-          </div>
-        </div>
-        <Routes>
-          <Route path="/">eagleEyeHome</Route>
-          <Route path="/equipment" element={<EquipmentPage />} />
-          <Route path="/projects" element={ProjectsPage} />
-        </Routes>
-      </Fragment>
+      <div className="fixed">
+        <NavBar />
+      </div>
+
+      <Routes>
+        <Route path="/" element={<EagleEyeHome />} />
+        <Route path="/equipment" element={<EquipmentPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/service" element={<ServicePage />} />
+        <Route path="/admin" element={<AdminPage />} />
+      </Routes>
     </>
   );
 }
-
-export default App;

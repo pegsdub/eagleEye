@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, Fragment } from "react";
+import NavBar from "./Components/NavBar";
+import { Routes, Route } from "react-router-dom";
+import EquipmentPage from "./Pages/EquipmentPage";
+import EagleEyeHome from "./Pages/eagleEyeHome";
+import ProjectsPage from "./Pages/ProjectsPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Fragment>
+        <div className="top-0 left-0 fixed">
+          <div>
+            <NavBar />
+          </div>
+        </div>
+        <Routes>
+          <Route path="/">eagleEyeHome</Route>
+          <Route path="/equipment" element={<EquipmentPage />} />
+          <Route path="/projects" element={ProjectsPage} />
+        </Routes>
+      </Fragment>
+    </>
   );
 }
 
